@@ -9,6 +9,11 @@ import UIKit
 
 class ProfileView: UIView {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var textField: UITextView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addXib()
