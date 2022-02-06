@@ -30,6 +30,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="O9c-0Y-443" secondAttribute="trailing" id="pMd-AL-Wbs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="profileView" destination="O9c-0Y-443" id="zEB-lV-tib"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
