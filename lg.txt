@@ -1,0 +1,102 @@
+Last login: Sun Feb  6 21:49:25 on ttys005
+AMP Navigation % git stash
+Saved working directory and index state WIP on iosui-1: 61e6f21 перестала крашится программа после удаления аутлетов
+AMP Navigation % git lg
+* 61e6f21 - (HEAD -> feature/iosui-1) перестала крашится программа после удаления аутлетов (7 hours ago) <ArtyomPotapov>
+* 79cd783 - (origin/main, origin/feature/iosui-1, origin/feature/iosui, main, feature/iosui) first commit (19 hours ago) <ArtyomPotapov>
+* 74b2bfd - Initial Commit (19 hours ago) <ArtyomPotapov>
+AMP Navigation % git ch 79cd783
+Note: switching to '79cd783'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 79cd783 first commit
+AMP Navigation % git st
+ M Navigation.xcodeproj/project.pbxproj
+A  Navigation/123.gif
+ M Navigation/Base.lproj/Main.storyboard
+ M Navigation/Info.plist
+AM Navigation/Profile/ProfileStoryboard.storyboard
+AM Navigation/Profile/ProfileView.swift
+AM Navigation/Profile/ProfileView.xib
+A  Navigation/Profile/ProfileViewController.swift
+AMP Navigation % git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+AMP Navigation % git add .
+AMP Navigation % git ci -m "all done but without outlets"
+[detached HEAD 7e95b5f] all done but without outlets
+ 8 files changed, 252 insertions(+), 8 deletions(-)
+ create mode 100644 Navigation/123.gif
+ create mode 100644 Navigation/Profile/ProfileStoryboard.storyboard
+ create mode 100644 Navigation/Profile/ProfileView.swift
+ create mode 100644 Navigation/Profile/ProfileView.xib
+ create mode 100644 Navigation/Profile/ProfileViewController.swift
+AMP Navigation % git st
+ M Navigation/Profile/ProfileView.swift
+ M Navigation/Profile/ProfileView.xib
+ M Navigation/Profile/ProfileViewController.swift
+AMP Navigation % git -a -m "added outlets into Xib"
+unknown option: -a
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+AMP Navigation % git ci -a -m "added outlets into Xib"
+[detached HEAD 0c623bc] added outlets into Xib
+ 3 files changed, 32 insertions(+), 30 deletions(-)
+ rewrite Navigation/Profile/ProfileViewController.swift (63%)
+AMP Navigation % git lg --graph --all
+* 0c623bc - (HEAD) added outlets into Xib (39 seconds ago) <ArtyomPotapov>
+* 7e95b5f - all done but without outlets (4 minutes ago) <ArtyomPotapov>
+| *   bfce4e0 - (refs/stash) WIP on iosui-1: 61e6f21 перестала крашится программа после удаления аутлетов (61 minutes ago) <ArtyomPotapov>
+| |\  
+| | * 48180ac - index on iosui-1: 61e6f21 перестала крашится программа после удаления аутлетов (61 minutes ago) <ArtyomPotapov>
+| |/  
+| * 61e6f21 - (feature/iosui-1) перестала крашится программа после удаления аутлетов (8 hours ago) <ArtyomPotapov>
+|/  
+* 79cd783 - (origin/main, origin/feature/iosui-1, origin/feature/iosui, main, feature/iosui) first commit (20 hours ago) <ArtyomPotapov>
+* 74b2bfd - Initial Commit (20 hours ago) <ArtyomPotapov>
+AMP Navigation % git br feature/iosui1 
+AMP Navigation % git br
+* (HEAD detached from 79cd783)
+  feature/iosui
+  feature/iosui-1
+  feature/iosui1
+  main
+AMP Navigation % git br -d feature/iosui1
+Deleted branch feature/iosui1 (was 0c623bc).
+AMP Navigation % git ch feature/iosui1
+error: pathspec 'feature/iosui1' did not match any file(s) known to git
+AMP Navigation % git ch -b feature/iosui1
+Switched to a new branch 'feature/iosui1'
+AMP Navigation % git br
+  feature/iosui
+  feature/iosui-1
+* feature/iosui1
+  main
+AMP Navigation % git st
+AMP Navigation % git lg
+* 0c623bc - (HEAD -> feature/iosui1) added outlets into Xib (6 minutes ago) <ArtyomPotapov>
+* 7e95b5f - all done but without outlets (10 minutes ago) <ArtyomPotapov>
+* 79cd783 - (origin/main, origin/feature/iosui-1, origin/feature/iosui, main, feature/iosui) first commit (20 hours ago) <ArtyomPotapov>
+* 74b2bfd - Initial Commit (20 hours ago) <ArtyomPotapov>
+AMP Navigation % 
+
